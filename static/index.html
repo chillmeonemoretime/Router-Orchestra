@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Router Orchestra</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎼</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Router Orchestra</h1>
+        <p class="tagline">Listen to your Internet.</p>
+      </div>
+      <div id="status" class="status" data-state="starting">
+        <span class="dot"></span>
+        <span id="status-text">Connecting to backend…</span>
+      </div>
+    </header>
+
+    <section class="stage panel">
+      <canvas id="pulse" aria-hidden="true"></canvas>
+      <div class="controls">
+        <button id="toggle" class="play" type="button">
+          <span class="icon" aria-hidden="true"></span>
+          <span id="toggle-label">Start</span>
+        </button>
+        <div class="bpm"><span id="bpm">60</span><small>BPM</small></div>
+        <label class="volume">
+          <span>Volume</span>
+          <input id="volume" type="range" min="0" max="100" value="30">
+          <output id="volume-value">30%</output>
+        </label>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat panel" style="--c: var(--down)">
+        <h2>Download</h2>
+        <p><span id="down">–</span><small>Mbps</small></p>
+        <div class="meter"><i id="down-meter"></i></div>
+        <footer>→ tempo &amp; melody</footer>
+      </article>
+      <article class="stat panel" style="--c: var(--up)">
+        <h2>Upload</h2>
+        <p><span id="up">–</span><small>Mbps</small></p>
+        <div class="meter"><i id="up-meter"></i></div>
+        <footer>→ bass</footer>
+      </article>
+      <article class="stat panel" style="--c: var(--rx)">
+        <h2>RX packets</h2>
+        <p><span id="rx">–</span><small>pps</small></p>
+        <div class="meter"><i id="rx-meter"></i></div>
+        <footer>→ kick &amp; snare</footer>
+      </article>
+      <article class="stat panel" style="--c: var(--tx)">
+        <h2>TX packets</h2>
+        <p><span id="tx">–</span><small>pps</small></p>
+        <div class="meter"><i id="tx-meter"></i></div>
+        <footer>→ hi-hats</footer>
+      </article>
+    </section>
+
+    <section class="panel wave">
+      <div class="wave-head">
+        <h2>Last 60 seconds</h2>
+        <div class="legend">
+          <span style="--c: var(--down)">Download</span>
+          <span style="--c: var(--up)">Upload</span>
+        </div>
+      </div>
+      <canvas id="wave" aria-label="Traffic over the last 60 seconds"></canvas>
+    </section>
+
+    <section class="band" aria-label="Instruments">
+      <span class="chip" data-voice="pad">Pad</span>
+      <span class="chip" data-voice="melody">Melody</span>
+      <span class="chip" data-voice="bass">Bass</span>
+      <span class="chip" data-voice="kick">Kick</span>
+      <span class="chip" data-voice="snare">Snare</span>
+      <span class="chip" data-voice="hat">Hi-hat</span>
+    </section>
+
+    <footer class="foot">
+      <span id="source">–</span>
+      <span>Reads WAN hardware counters with <code>ethtool -S</code> over SSH. Hardware NAT stays on.</span>
+    </footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
