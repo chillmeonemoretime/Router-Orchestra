@@ -8,6 +8,23 @@ Router Orchestra 把路由器的实时 WAN 流量变成音乐。浏览网页、�
 
 它读取的是路由器的**硬件**计数器，因此可以在开启硬件 NAT / 硬件流量卸载的情况下正常工作，无需在路由器上安装任何软件，也不修改任何配置。
 
+## 演示视频
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://youtu.be/gyaIcjEzBLc"><img src="https://img.youtube.com/vi/gyaIcjEzBLc/maxresdefault.jpg" alt="▶ 真实路由器流量"></a><br>
+      <sub>▶ 真实路由器流量</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://youtu.be/-BmgDCMcq7k"><img src="https://img.youtube.com/vi/-BmgDCMcq7k/maxresdefault.jpg" alt="▶ Demo 模式（模拟流量）"></a><br>
+      <sub>▶ Demo 模式（模拟流量）</sub>
+    </td>
+  </tr>
+</table>
+
+## 快速开始
+
 ```
 python3 orchestra.py --host 192.168.2.1 --user root --interface wan
 # 打开 http://127.0.0.1:8765 并点击 Start

@@ -8,6 +8,23 @@ Router Orchestra turns your router's live WAN traffic into music. Browse, stream
 
 It reads the router's **hardware** counters, so it works with Hardware NAT / flow offloading left on. Nothing gets installed on or changed on the router.
 
+## Demo videos
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://youtu.be/gyaIcjEzBLc"><img src="https://img.youtube.com/vi/gyaIcjEzBLc/maxresdefault.jpg" alt="▶ Real router traffic"></a><br>
+      <sub>▶ Real router traffic</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://youtu.be/-BmgDCMcq7k"><img src="https://img.youtube.com/vi/-BmgDCMcq7k/maxresdefault.jpg" alt="▶ Demo mode (simulated traffic)"></a><br>
+      <sub>▶ Demo mode (simulated traffic)</sub>
+    </td>
+  </tr>
+</table>
+
+## Quick start
+
 ```
 python3 orchestra.py --host 192.168.2.1 --user root --interface wan
 # open http://127.0.0.1:8765 and press Start
