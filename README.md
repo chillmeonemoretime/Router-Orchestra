@@ -1,5 +1,7 @@
 # Router Orchestra
 
+English | [简体中文](README.zh-CN.md)
+
 **Listen to your Internet.**
 
 Router Orchestra turns your router's live WAN traffic into music. Browse, stream, download or run a speed test and the band follows along: faster, denser, louder. When the network goes quiet, so does the music.
@@ -100,6 +102,7 @@ Open `http://127.0.0.1:8765` and press **Start**. Browsers only allow audio afte
 | `Host key verification failed.`                | Run `ssh root@<router>` once and accept the key.                                             |
 | `Permission denied (publickey…)`               | Add your public key to the router (LuCI → System → Administration → SSH-Keys).               |
 | `ethtool -S wan did not report rx/tx counters` | Check `ethtool -S <iface>` on the router and pass the right `--interface`.                 |
+| `Cannot listen on 127.0.0.1:8765`               | The port is taken (Anki's AnkiConnect add-on also uses 8765). Pick another: `--port 8766`. |
 
 ## Project layout
 
